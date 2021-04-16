@@ -1171,7 +1171,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #c49ddf;
+  background: #8fb339;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2562,3 +2562,52 @@ ul.breadcrumb li + li:last-child {
     margin: 8px 0 0;
   }
 }
+body {
+  background: url("/images/bj3.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.content-wrap {
+  opacity: 0.9;
+}
+.sidebar {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+.popup {
+  opacity: 0.9;
+}
+/*
+// 页面头样式属性
+.header-inner {
+  // 也可以同时定义背景色
+  // background: #ddd 
+  // 透明度
+  // opacity: 0.8;
+}
+// sidebar侧边工具栏样式属性
+.sidebar{
+    // 动画过渡时间
+	transition-duration: 0.4s;
+    // 透明度
+	opacity: 0.8
+}
+// 标题样式
+.posts-expand .post-title-link {
+	// 设置字体颜色
+	color: #222;
+}
+
+// 文章版块样式
+.post-block {
+    //background: var(--content-bg-color);
+	background: #fff
+    border-radius: initial;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+    padding: 40px;
+}
+*/
