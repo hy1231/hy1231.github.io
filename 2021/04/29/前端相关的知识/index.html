@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1. WWW什么是 WWW？ WWW 指万维网（World Wide Web） 万维网常被称为Web  Web 是由遍布全球的计算机所组成的网络 所有 Web 中的计算机都可以彼此通信  所有这些计算机都使用名为 HTTP 的通信标准">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端相关的知识">
+<meta property="og:url" content="http://example.com/2021/04/29/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="Blog by Heroy">
+<meta property="og:description" content="1. WWW什么是 WWW？ WWW 指万维网（World Wide Web） 万维网常被称为Web  Web 是由遍布全球的计算机所组成的网络 所有 Web 中的计算机都可以彼此通信  所有这些计算机都使用名为 HTTP 的通信标准">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-29T08:13:12.000Z">
+<meta property="article:modified_time" content="2021-04-29T08:18:00.942Z">
+<meta property="article:author" content="Heroy">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/04/29/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端相关的知识 | Blog by Heroy</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog by Heroy</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/29/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/tx.jpeg">
+      <meta itemprop="name" content="Heroy">
+      <meta itemprop="description" content="My blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog by Heroy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端相关的知识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-29 16:13:12 / 修改时间：16:18:00" itemprop="dateCreated datePublished" datetime="2021-04-29T16:13:12+08:00">2021-04-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-WWW"><a href="#1-WWW" class="headerlink" title="1. WWW"></a>1. WWW</h1><h2 id="什么是-WWW？"><a href="#什么是-WWW？" class="headerlink" title="什么是 WWW？"></a>什么是 WWW？</h2><ul>
+<li>WWW 指万维网（World Wide Web）</li>
+<li>万维网常被称为Web</li>
+<li> Web 是由遍布全球的计算机所组成的网络</li>
+<li>所有 Web 中的计算机都可以彼此通信</li>
+<li> 所有这些计算机都使用名为 HTTP 的通信标准<span id="more"></span>
+<h2 id="WWW-如何工作？"><a href="#WWW-如何工作？" class="headerlink" title="WWW  如何工作？"></a>WWW  如何工作？</h2></li>
+<li>Web 信息存储于被称为网页的文档中</li>
+<li>网页是存储于被称为 Web 服务器的计算机上</li>
+<li>读取网页的计算机称为 Web 客户端</li>
+<li>Web 客户端通过称为浏览器的程序来查看网页</li>
+<li>主要的浏览器有 Internet Explorer 和 Mozilla Firefox</li>
+</ul>
+<h2 id="浏览器如何读取页面？"><a href="#浏览器如何读取页面？" class="headerlink" title="浏览器如何读取页面？"></a>浏览器如何读取页面？</h2><ul>
+<li>浏览器可通过一个请求来读取某个服务器上的一张网页</li>
+<li>请求是一个包含页面地址的标准 HTTP 请求</li>
+<li>页面地址类似这样：<code>http://www.someone.com/page.htm</code></li>
+</ul>
+<h2 id="浏览器如何显示页面？"><a href="#浏览器如何显示页面？" class="headerlink" title="浏览器如何显示页面？"></a>浏览器如何显示页面？</h2><ul>
+<li>所有的网页都含有其如何被显示的结构</li>
+<li>浏览器通过阅读这些结构来显示页面</li>
+<li>最常用的显示结构称为 HTML 标签</li>
+<li>用于段落的 HTML 标签类似这样：<code>&lt;p&gt;</code></li>
+<li>在 HTML 中像这样定义段落：<code>&lt;p&gt;This is a Paragraph&lt;/p&gt;</code></li>
+</ul>
+<h2 id="谁制定-web-标准？"><a href="#谁制定-web-标准？" class="headerlink" title="谁制定 web 标准？"></a>谁制定 web 标准？</h2><ul>
+<li>web 标准不是由 Netscape 或 Microsoft 制定的</li>
+<li>web 的规则制定主体是 W3C</li>
+<li>W3C 指的是万维网联盟（World Wide Web Consortium）</li>
+<li>W3C 将各种规范订立为 web 标准</li>
+<li>最核心的 web 标准是 HTML、CSS、XML</li>
+<li>最新的 HTML 标准是 XHTML 1.0</li>
+</ul>
+<h1 id="2-HTML"><a href="#2-HTML" class="headerlink" title="2. HTML"></a>2. HTML</h1><h2 id="什么是-HTML？"><a href="#什么是-HTML？" class="headerlink" title="什么是 HTML？"></a>什么是 HTML？</h2><p>HTML 是用来描述网页的一种语言。</p>
+<ul>
+<li>HTML 指的是超文本标记语言 (Hyper Text Markup Language)</li>
+<li>HTML 不是一种编程语言，而是一种标记语言 (markup language)</li>
+<li>标记语言是一套标记标签 (markup tag)</li>
+<li>HTML 使用标记标签来描述网页</li>
+</ul>
+<h2 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h2><p>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。</p>
+<ul>
+<li>HTML 标签是由尖括号包围的关键词，比如 <code>&lt;html&gt;</code></li>
+<li>HTML 标签通常是成对出现的，比如<code> &lt;b&gt; 和 &lt;/b&gt;</code></li>
+<li>标签对中的第一个标签是开始标签，第二个标签是结束标签</li>
+<li>开始和结束标签也被称为开放标签和闭合标签</li>
+</ul>
+<h2 id="HTML-文档-网页"><a href="#HTML-文档-网页" class="headerlink" title="HTML 文档 = 网页"></a>HTML 文档 = 网页</h2><ul>
+<li>HTML 文档描述网页</li>
+<li>HTML 文档包含 HTML 标签和纯文本</li>
+<li>HTML 文档也被称为网页</li>
+</ul>
+<p>Web 浏览器的作用是读取 HTML 文档，并以网页的形式显示出它们。浏览器不会显示 HTML 标签，而是使用标签来解释页面的内容<br><code>&lt;html&gt;</code><br><code>&lt;body&gt;</code></p>
+<p><code>&lt;h1&gt;My First Heading&lt;/h1&gt;</code></p>
+<p><code>&lt;p&gt;My first paragraph.&lt;/p&gt;</code></p>
+<p><code>&lt;/body&gt;</code><br><code>&lt;/html&gt;</code></p>
+<h1 id="3-CSS"><a href="#3-CSS" class="headerlink" title="3. CSS"></a>3. CSS</h1><h2 id="CSS样式解决了一个普遍的问题"><a href="#CSS样式解决了一个普遍的问题" class="headerlink" title="CSS样式解决了一个普遍的问题"></a>CSS样式解决了一个普遍的问题</h2><ul>
+<li>HTML 标签原本被设计为用于定义文档内容。通过使用 <code>&lt;h1&gt;, &lt;p&gt;, &lt;table&gt; </code>这样的标签，HTML 当初被指望用来表达“这是标题”、“这是段落”、“这是表格”之类的信息。而文档的布局被期望由浏览器来完成，而不使用任何的格式化标签。</li>
+<li>由于两种主要的浏览器（Netscape 和 Internet Explorer）不断地将新的 HTML 标签和属性（比如字体标签和颜色属性）添加到 HTML 规范之中，因此创建文档内容清晰地独立于文档表现层的站点变得越来越困难。</li>
+<li>为了解决这个问题，万维网联盟（W3C），这个非营利的标准化联盟，肩负起了 HTML 标准化的使命，并在 HTML 4.0 之外创造出 STYLES（样式）。</li>
+<li>所有的主流浏览器均支持层叠样式表。</li>
+</ul>
+<h2 id="层叠次序"><a href="#层叠次序" class="headerlink" title="层叠次序"></a>层叠次序</h2><h3 id="当同一个HTML元素被不止一个样式所定义时，会使用哪个样式呢？"><a href="#当同一个HTML元素被不止一个样式所定义时，会使用哪个样式呢？" class="headerlink" title="当同一个HTML元素被不止一个样式所定义时，会使用哪个样式呢？"></a>当同一个HTML元素被不止一个样式所定义时，会使用哪个样式呢？</h3><p>一般而言，所有的样式会根据下面的规则层叠于一个新的虚拟样式表中，其中数字 4 拥有最高的优先权。</p>
+<ol>
+<li>浏览器缺省设置</li>
+<li>外部样式表</li>
+<li>内部样式表（位于 <head> 标签内部）</li>
+<li>内联样式（在 HTML 元素内部）</li>
+</ol>
+<p>因此，内联样式（在 HTML 元素内部）拥有最高的优先权，这意味着它将优先于以下的样式声明：<head> 标签中的样式声明，外部样式表中的样式声明，或者浏览器中的样式声明（缺省值）。</p>
+<h1 id="4-JavaScript"><a href="#4-JavaScript" class="headerlink" title="4. JavaScript"></a>4. JavaScript</h1><h2 id="什么是-JavaScript？"><a href="#什么是-JavaScript？" class="headerlink" title="什么是 JavaScript？"></a>什么是 JavaScript？</h2><ul>
+<li>JavaScript 被设计用来向 HTML 页面添加交互行为。</li>
+<li>JavaScript 是一种脚本语言（脚本语言是一种轻量级的编程语言）。</li>
+<li>JavaScript 由数行可执行计算机代码组成。</li>
+<li>JavaScript 通常被直接嵌入 HTML 页面。</li>
+<li>JavaScript 是一种解释性语言（就是说，代码执行不进行预编译）。</li>
+<li>所有的人无需购买许可证均可使用 JavaScript。</li>
+</ul>
+<h2 id="JavaScript-能做什么？"><a href="#JavaScript-能做什么？" class="headerlink" title="JavaScript 能做什么？"></a>JavaScript 能做什么？</h2><h4 id="JavaScript-为-HTML-设计师提供了一种编程工具"><a href="#JavaScript-为-HTML-设计师提供了一种编程工具" class="headerlink" title="JavaScript 为 HTML 设计师提供了一种编程工具"></a><em><strong>JavaScript 为 HTML 设计师提供了一种编程工具</strong></em></h4><p>HTML 创作者往往都不是程序员，但是 JavaScript 却是一种只拥有极其简单的语法的脚本语言！几乎每个人都有能力将短小的代码片断放入他们的 HTML 页面当中。</p>
+<h4 id="JavaScript-可以将动态的文本放入-HTML-页面"><a href="#JavaScript-可以将动态的文本放入-HTML-页面" class="headerlink" title="JavaScript 可以将动态的文本放入 HTML 页面"></a><em><strong>JavaScript 可以将动态的文本放入 HTML 页面</strong></em></h4><p>类似于这样的一段 JavaScript 声明可以将一段可变的文本放入 HTML 页面：<code>document.write(&quot;&lt;h1&gt;&quot; + name + &quot;&lt;/h1&gt;&quot;)</code></p>
+<h4 id="JavaScript-可以对事件作出响应"><a href="#JavaScript-可以对事件作出响应" class="headerlink" title="JavaScript 可以对事件作出响应"></a><em><strong>JavaScript 可以对事件作出响应</strong></em></h4><p>可以将 JavaScript 设置为当某事件发生时才会被执行，例如页面载入完成或者当用户点击某个 HTML 元素时。</p>
+<h4 id="JavaScript-可以读写-HTML-元素"><a href="#JavaScript-可以读写-HTML-元素" class="headerlink" title="JavaScript 可以读写 HTML 元素"></a><em><strong>JavaScript 可以读写 HTML 元素</strong></em></h4><p>JavaScript 可以读取及改变 HTML 元素的内容。</p>
+<h4 id="JavaScript-可被用来验证数据"><a href="#JavaScript-可被用来验证数据" class="headerlink" title="JavaScript 可被用来验证数据"></a><em><strong>JavaScript 可被用来验证数据</strong></em></h4><p>在数据被提交到服务器之前，JavaScript 可被用来验证这些数据。</p>
+<h4 id="JavaScript-可被用来检测访问者的浏览器"><a href="#JavaScript-可被用来检测访问者的浏览器" class="headerlink" title="JavaScript 可被用来检测访问者的浏览器"></a><em><strong>JavaScript 可被用来检测访问者的浏览器</strong></em></h4><p>JavaScript 可被用来检测访问者的浏览器，并根据所检测到的浏览器，为这个浏览器载入相应的页面。</p>
+<h4 id="JavaScript-可被用来创建-cookies"><a href="#JavaScript-可被用来创建-cookies" class="headerlink" title="JavaScript 可被用来创建 cookies"></a><em><strong>JavaScript 可被用来创建 cookies</strong></em></h4><p>JavaScript 可被用来存储和取回位于访问者的计算机中的信息。</p>
+<h1 id="5-XML"><a href="#5-XML" class="headerlink" title="5. XML"></a>5. XML</h1><h5 id="XML-被设计用来描述数据，其焦点是数据的内容。"><a href="#XML-被设计用来描述数据，其焦点是数据的内容。" class="headerlink" title="XML 被设计用来描述数据，其焦点是数据的内容。"></a>XML 被设计用来描述数据，其焦点是数据的内容。</h5><h5 id="HTML-被设计用来显示数据，其焦点是数据的外观。"><a href="#HTML-被设计用来显示数据，其焦点是数据的外观。" class="headerlink" title="HTML 被设计用来显示数据，其焦点是数据的外观。"></a>HTML 被设计用来显示数据，其焦点是数据的外观。</h5><h2 id="什么是XML"><a href="#什么是XML" class="headerlink" title="什么是XML?"></a>什么是XML?</h2><ul>
+<li>XML 指可扩展标记语言（EXtensible Markup Language）</li>
+<li>XML 是一种标记语言，很类似 HTML</li>
+<li>XML 被设计用来描述数据</li>
+<li>XML 标签没有被预定义。您需要自行定义标签。</li>
+<li>XML 使用文件类型声明（DTD）或者 XML Schema 来描述数据。</li>
+<li>带有 DTD 或者 XML Schema 的 XML 被设计为具有自我描述性。</li>
+<li>XML 是一个 W3C 标准</li>
+</ul>
+<h2 id="没有任何行为的-XML"><a href="#没有任何行为的-XML" class="headerlink" title="没有任何行为的 XML"></a>没有任何行为的 XML</h2><p>XML 是不作为的。<br>也许这有点难以理解，但是 XML 不会做任何事情。XML 被设计用来结构化、存储以及传输信息。<br>下面是 John 写给 George 的便签，存储为 XML：</p>
+<blockquote>
+<p><code> &lt;note&gt;</code><br><code>&lt;to&gt;George&lt;/to&gt;</code><br><code>&lt;from&gt;John&lt;/from&gt;</code><br><code>&lt;heading&gt;Reminder&lt;/heading&gt;</code><br><code>&lt;body&gt;Don&#39;t forget the meeting!&lt;/body&gt;</code><br><code>&lt;/note&gt;</code></p>
+</blockquote>
+<p>这个标签有标题以及留言。它也包含了发送者和接受者的信息。但是，这个 XML 文档仍然没有做任何事情。它仅仅是包装在 XML 标签中的纯粹的信息。我们需要编写软件或者程序，才能传送、接收和显示出这个文档。</p>
+<h2 id="XML-是免费的、可扩展的"><a href="#XML-是免费的、可扩展的" class="headerlink" title="XML 是免费的、可扩展的"></a>XML 是免费的、可扩展的</h2><h4 id="XML-标签没有被预定义。您必须“发明”自己的标签。"><a href="#XML-标签没有被预定义。您必须“发明”自己的标签。" class="headerlink" title="XML 标签没有被预定义。您必须“发明”自己的标签。"></a>XML 标签没有被预定义。您必须“发明”自己的标签。</h4><p>被用来标记 HTML 文档及其结构的标签是预定义的。HTML 文档的创作者只能使用在 HTML 标准中被定义的那些标签（比如<code>&lt;p&gt;、&lt;h1&gt;</code>。）。<br>XML 允许创作者定义自己的标签以及自己的文档结构。<br>上面的例子中的标签没有在任何一个 XML 标准中被定义过。这些标签是由 XML 文档的作者发明的。</p>
+<h2 id="XML-是对-HTML-的补充"><a href="#XML-是对-HTML-的补充" class="headerlink" title="XML 是对 HTML 的补充"></a>XML 是对 HTML 的补充</h2><h4 id="XML-不是-HTML-的替代物。"><a href="#XML-不是-HTML-的替代物。" class="headerlink" title="XML 不是 HTML 的替代物。"></a>XML 不是 HTML 的替代物。</h4><p>您需要理解 XML 不是 HTML 的替代物，这一点非常重要。在未来的 Web 开发中，最有可能出现的情况是，XML 会被用来描述数据，而 HTML 会被用来格式化和显示这些数据。<br>我们关于 XML 最好的描述是：XML 是跨平台的、用于传输信息且独立于软件和硬件的工具。</p>
+<h2 id="XML-在未来的-Web-开发中扮演的角色"><a href="#XML-在未来的-Web-开发中扮演的角色" class="headerlink" title="XML 在未来的 Web 开发中扮演的角色"></a>XML 在未来的 Web 开发中扮演的角色</h2><h4 id="XML-将会无所不在。"><a href="#XML-将会无所不在。" class="headerlink" title="XML 将会无所不在。"></a>XML 将会无所不在。</h4><p>当我们看到 XML 标准突飞猛进的开发进度，以及大批的软件开发商采用这个标准的日新月异的速度时，真的是不禁感叹这真是令人叹为观止。<br>我们坚定地认为，XML 将在 Web 的未来中起到的作用不会亚于一直作为 Web 基石的 HTML，并且，XML 将会成为所有数据处理和数据传输的最常用的工具。</p>
+<h1 id="6-服务器脚本"><a href="#6-服务器脚本" class="headerlink" title="6. 服务器脚本"></a>6. 服务器脚本</h1><h4 id="HTML-文件可以包含文本、HTML-标签以及脚本。"><a href="#HTML-文件可以包含文本、HTML-标签以及脚本。" class="headerlink" title="HTML 文件可以包含文本、HTML 标签以及脚本。"></a>HTML 文件可以包含文本、HTML 标签以及脚本。</h4><h4 id="HTML-文件中的脚本可以在-web-服务器上执行。"><a href="#HTML-文件中的脚本可以在-web-服务器上执行。" class="headerlink" title="HTML 文件中的脚本可以在 web 服务器上执行。"></a>HTML 文件中的脚本可以在 web 服务器上执行。</h4><h2 id="什么是服务器脚本？"><a href="#什么是服务器脚本？" class="headerlink" title="什么是服务器脚本？"></a>什么是服务器脚本？</h2><p>通常，当浏览器请求某个 HTML 文件时，服务器会返回此文件，但是假如此文件含有服务器端的脚本，那么在此 HTML 文件作为纯 HTML 被返回浏览器之前，首先会执行 HTML 文件中的脚本。</p>
+<h2 id="服务器脚本能做什么呢？"><a href="#服务器脚本能做什么呢？" class="headerlink" title="服务器脚本能做什么呢？"></a>服务器脚本能做什么呢？</h2><ul>
+<li>动态地向 web 页面编辑、改变或添加任何的内容</li>
+<li>对由 HTML 表单提交的用户请求或数据进行响应</li>
+<li>访问数据或数据库，并向浏览器返回结果</li>
+<li>为不同的用户定制页面</li>
+<li>提高网页安全性，使您的网页代码不会通过浏览器被查看到</li>
+</ul>
+<p>重要事项：由于脚本在服务器上执行，因此浏览器在不支持脚本的情况下就可以显示服务器端的文件！</p>
+<h2 id="ASP-和-PHP"><a href="#ASP-和-PHP" class="headerlink" title="ASP 和 PHP"></a>ASP 和 PHP</h2><p>在 W3School，我们通过使用活动服务器页面（ASP）和超文本预处理器（PHP）来演示服务器端的脚本编程。<br>您无法通过查看源代码来查看 ASP 或 PHP 的源代码，您看到的仅仅是来自服务器的输出，那些纯粹的 HTML。这是因为在结果以纯粹的 HTML 发送到浏览器之前，脚本已经在服务器上执行了。</p>
+<h1 id="7-SQL"><a href="#7-SQL" class="headerlink" title="7. SQL"></a>7. SQL</h1><h4 id="SQL-是用于访问和处理数据库的标准的计算机语言。"><a href="#SQL-是用于访问和处理数据库的标准的计算机语言。" class="headerlink" title="SQL 是用于访问和处理数据库的标准的计算机语言。"></a>SQL 是用于访问和处理数据库的标准的计算机语言。</h4><h2 id="通过-SQL-来管理数据"><a href="#通过-SQL-来管理数据" class="headerlink" title="通过 SQL 来管理数据"></a>通过 SQL 来管理数据</h2><p>结构化查询语言 (SQL) 是用于访问数据库的标准语言，这些数据库包括 SQL Server、Oracle、MySQL、Sybase 以及 Access 等等。<br>对于那些希望在数据库中存储数据并从中获取数据的人来说，SQL 的知识是价值无法衡量的。</p>
+<h2 id="什么是-SQL"><a href="#什么是-SQL" class="headerlink" title="什么是 SQL?"></a>什么是 SQL?</h2><ul>
+<li>SQL 指结构化查询语言 (Structured Query Language)</li>
+<li>SQL 使我们有能力访问数据库</li>
+<li>SQL 是一种 ANSI 的标准计算机语言</li>
+<li>SQL 面向数据库执行查询</li>
+<li>SQL 可从数据库取回数据</li>
+<li>SQL 可在数据库中插入新的记录</li>
+<li>SQL 可从数据库删除记录</li>
+<li>SQL 很容易学习</li>
+</ul>
+<p>编者注：ANSI，美国国家标准化组织</p>
+<h2 id="SQL-数据库表"><a href="#SQL-数据库表" class="headerlink" title="SQL 数据库表"></a>SQL 数据库表</h2><p>一个数据库通常包含一个或多个表。每个表由一个名字标识（例如“客户”或者“订单”）。表包含带有数据的记录（行）。<br>下面的例子是一个名为 “Persons” 的表：<br>|LastName|    FirstName|    Address|    City|<br>|—|—|—|—|<br>|Hansen    |Ola|    Timoteivn 10    |Sandnes|<br>|Svendson|    Tove|    Borgvn 23|    Sandnes|<br>|Pettersen|    Kari    |Storgt 20    |Stavanger|<br>上面的表包含三条记录（每一条对应一个人）和四个列（姓、名、地址和城市）。</p>
+<h2 id="SQL-查询程序"><a href="#SQL-查询程序" class="headerlink" title="SQL 查询程序"></a>SQL 查询程序</h2><p>通过 SQL，我们可以查询某个数据库，并获得返回的一个结果集。<br>查询程序类似这样：</p>
+<blockquote>
+<p><code>SELECT LastName FROM Persons</code></p>
+</blockquote>
+<p>结果集类似这样：<br>|LastName|<br>|—|<br>|Hansen|<br>|Svendson|<br>|Pettersen|<br>注释：某些数据库系统要求在 SQL 命令的末端使用分号。在我们的教程中不使用分号。</p>
+<h2 id="SQL-数据操作语言-DML"><a href="#SQL-数据操作语言-DML" class="headerlink" title="SQL 数据操作语言 (DML)"></a>SQL 数据操作语言 (DML)</h2><p>SQL (结构化查询语言)是用于执行查询的语法。但是 SQL 语言也包含用于更新、插入和删除记录的语法。<br>这些查询和更新语句都来自 SQL 的 DML 部分：</p>
+<ul>
+<li>SELECT - 从数据库表中获取数据</li>
+<li>UPDATE - 更新数据库表中的数据</li>
+<li>DELETE - 从数据库表中删除数据</li>
+<li>INSERT INTO - 向数据库表中插入数据</li>
+</ul>
+<h2 id="SQL-数据定义语言-DDL"><a href="#SQL-数据定义语言-DDL" class="headerlink" title="SQL 数据定义语言 (DDL)"></a>SQL 数据定义语言 (DDL)</h2><p>SQL 的数据定义语言部分使我们有能力创建或删除表格。我们也可以定义索引（键），规定表之间的链接，以及施加表间的约束。<br>SQL 中最重要的 DDL 语句:</p>
+<p>CREATE TABLE - 创建新表<br>ALTER TABLE - 变更（改变）数据库表<br>DROP TABLE - 删除表<br>CREATE INDEX - 创建索引（搜索键）<br>DROP INDEX - 删除索引</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/16/Vim%E7%BC%96%E8%BE%91%E5%99%A8/" rel="prev" title="Vim编辑器">
+      <i class="fa fa-chevron-left"></i> Vim编辑器
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-WWW"><span class="nav-number">1.</span> <span class="nav-text">1. WWW</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-WWW%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是 WWW？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WWW-%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">WWW  如何工作？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A6%82%E4%BD%95%E8%AF%BB%E5%8F%96%E9%A1%B5%E9%9D%A2%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器如何读取页面？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A6%82%E4%BD%95%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%EF%BC%9F"><span class="nav-number">1.4.</span> <span class="nav-text">浏览器如何显示页面？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%81%E5%88%B6%E5%AE%9A-web-%E6%A0%87%E5%87%86%EF%BC%9F"><span class="nav-number">1.5.</span> <span class="nav-text">谁制定 web 标准？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-HTML"><span class="nav-number">2.</span> <span class="nav-text">2. HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-HTML%EF%BC%9F"><span class="nav-number">2.1.</span> <span class="nav-text">什么是 HTML？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-%E6%A0%87%E7%AD%BE"><span class="nav-number">2.2.</span> <span class="nav-text">HTML 标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-%E6%96%87%E6%A1%A3-%E7%BD%91%E9%A1%B5"><span class="nav-number">2.3.</span> <span class="nav-text">HTML 文档 &#x3D; 网页</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-CSS"><span class="nav-number">3.</span> <span class="nav-text">3. CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E6%A0%B7%E5%BC%8F%E8%A7%A3%E5%86%B3%E4%BA%86%E4%B8%80%E4%B8%AA%E6%99%AE%E9%81%8D%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">CSS样式解决了一个普遍的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E5%8F%A0%E6%AC%A1%E5%BA%8F"><span class="nav-number">3.2.</span> <span class="nav-text">层叠次序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E5%90%8C%E4%B8%80%E4%B8%AAHTML%E5%85%83%E7%B4%A0%E8%A2%AB%E4%B8%8D%E6%AD%A2%E4%B8%80%E4%B8%AA%E6%A0%B7%E5%BC%8F%E6%89%80%E5%AE%9A%E4%B9%89%E6%97%B6%EF%BC%8C%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%93%AA%E4%B8%AA%E6%A0%B7%E5%BC%8F%E5%91%A2%EF%BC%9F"><span class="nav-number">3.2.1.</span> <span class="nav-text">当同一个HTML元素被不止一个样式所定义时，会使用哪个样式呢？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-JavaScript"><span class="nav-number">4.</span> <span class="nav-text">4. JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-JavaScript%EF%BC%9F"><span class="nav-number">4.1.</span> <span class="nav-text">什么是 JavaScript？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">4.2.</span> <span class="nav-text">JavaScript 能做什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-%E4%B8%BA-HTML-%E8%AE%BE%E8%AE%A1%E5%B8%88%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E7%A7%8D%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7"><span class="nav-number">4.2.0.1.</span> <span class="nav-text">JavaScript 为 HTML 设计师提供了一种编程工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-%E5%8F%AF%E4%BB%A5%E5%B0%86%E5%8A%A8%E6%80%81%E7%9A%84%E6%96%87%E6%9C%AC%E6%94%BE%E5%85%A5-HTML-%E9%A1%B5%E9%9D%A2"><span class="nav-number">4.2.0.2.</span> <span class="nav-text">JavaScript 可以将动态的文本放入 HTML 页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-%E5%8F%AF%E4%BB%A5%E5%AF%B9%E4%BA%8B%E4%BB%B6%E4%BD%9C%E5%87%BA%E5%93%8D%E5%BA%94"><span class="nav-number">4.2.0.3.</span> <span class="nav-text">JavaScript 可以对事件作出响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-%E5%8F%AF%E4%BB%A5%E8%AF%BB%E5%86%99-HTML-%E5%85%83%E7%B4%A0"><span class="nav-number">4.2.0.4.</span> <span class="nav-text">JavaScript 可以读写 HTML 元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-%E5%8F%AF%E8%A2%AB%E7%94%A8%E6%9D%A5%E9%AA%8C%E8%AF%81%E6%95%B0%E6%8D%AE"><span class="nav-number">4.2.0.5.</span> <span class="nav-text">JavaScript 可被用来验证数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-%E5%8F%AF%E8%A2%AB%E7%94%A8%E6%9D%A5%E6%A3%80%E6%B5%8B%E8%AE%BF%E9%97%AE%E8%80%85%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="nav-number">4.2.0.6.</span> <span class="nav-text">JavaScript 可被用来检测访问者的浏览器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-%E5%8F%AF%E8%A2%AB%E7%94%A8%E6%9D%A5%E5%88%9B%E5%BB%BA-cookies"><span class="nav-number">4.2.0.7.</span> <span class="nav-text">JavaScript 可被用来创建 cookies</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-XML"><span class="nav-number">5.</span> <span class="nav-text">5. XML</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#XML-%E8%A2%AB%E8%AE%BE%E8%AE%A1%E7%94%A8%E6%9D%A5%E6%8F%8F%E8%BF%B0%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%85%B6%E7%84%A6%E7%82%B9%E6%98%AF%E6%95%B0%E6%8D%AE%E7%9A%84%E5%86%85%E5%AE%B9%E3%80%82"><span class="nav-number">5.0.0.0.1.</span> <span class="nav-text">XML 被设计用来描述数据，其焦点是数据的内容。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML-%E8%A2%AB%E8%AE%BE%E8%AE%A1%E7%94%A8%E6%9D%A5%E6%98%BE%E7%A4%BA%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%85%B6%E7%84%A6%E7%82%B9%E6%98%AF%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%96%E8%A7%82%E3%80%82"><span class="nav-number">5.0.0.0.2.</span> <span class="nav-text">HTML 被设计用来显示数据，其焦点是数据的外观。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFXML"><span class="nav-number">5.1.</span> <span class="nav-text">什么是XML?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B2%A1%E6%9C%89%E4%BB%BB%E4%BD%95%E8%A1%8C%E4%B8%BA%E7%9A%84-XML"><span class="nav-number">5.2.</span> <span class="nav-text">没有任何行为的 XML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML-%E6%98%AF%E5%85%8D%E8%B4%B9%E7%9A%84%E3%80%81%E5%8F%AF%E6%89%A9%E5%B1%95%E7%9A%84"><span class="nav-number">5.3.</span> <span class="nav-text">XML 是免费的、可扩展的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XML-%E6%A0%87%E7%AD%BE%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%A2%84%E5%AE%9A%E4%B9%89%E3%80%82%E6%82%A8%E5%BF%85%E9%A1%BB%E2%80%9C%E5%8F%91%E6%98%8E%E2%80%9D%E8%87%AA%E5%B7%B1%E7%9A%84%E6%A0%87%E7%AD%BE%E3%80%82"><span class="nav-number">5.3.0.1.</span> <span class="nav-text">XML 标签没有被预定义。您必须“发明”自己的标签。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML-%E6%98%AF%E5%AF%B9-HTML-%E7%9A%84%E8%A1%A5%E5%85%85"><span class="nav-number">5.4.</span> <span class="nav-text">XML 是对 HTML 的补充</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XML-%E4%B8%8D%E6%98%AF-HTML-%E7%9A%84%E6%9B%BF%E4%BB%A3%E7%89%A9%E3%80%82"><span class="nav-number">5.4.0.1.</span> <span class="nav-text">XML 不是 HTML 的替代物。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML-%E5%9C%A8%E6%9C%AA%E6%9D%A5%E7%9A%84-Web-%E5%BC%80%E5%8F%91%E4%B8%AD%E6%89%AE%E6%BC%94%E7%9A%84%E8%A7%92%E8%89%B2"><span class="nav-number">5.5.</span> <span class="nav-text">XML 在未来的 Web 开发中扮演的角色</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XML-%E5%B0%86%E4%BC%9A%E6%97%A0%E6%89%80%E4%B8%8D%E5%9C%A8%E3%80%82"><span class="nav-number">5.5.0.1.</span> <span class="nav-text">XML 将会无所不在。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%84%9A%E6%9C%AC"><span class="nav-number">6.</span> <span class="nav-text">6. 服务器脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-%E6%96%87%E4%BB%B6%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%AB%E6%96%87%E6%9C%AC%E3%80%81HTML-%E6%A0%87%E7%AD%BE%E4%BB%A5%E5%8F%8A%E8%84%9A%E6%9C%AC%E3%80%82"><span class="nav-number">6.0.0.1.</span> <span class="nav-text">HTML 文件可以包含文本、HTML 标签以及脚本。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E8%84%9A%E6%9C%AC%E5%8F%AF%E4%BB%A5%E5%9C%A8-web-%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%89%A7%E8%A1%8C%E3%80%82"><span class="nav-number">6.0.0.2.</span> <span class="nav-text">HTML 文件中的脚本可以在 web 服务器上执行。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%84%9A%E6%9C%AC%EF%BC%9F"><span class="nav-number">6.1.</span> <span class="nav-text">什么是服务器脚本？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%84%9A%E6%9C%AC%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F"><span class="nav-number">6.2.</span> <span class="nav-text">服务器脚本能做什么呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASP-%E5%92%8C-PHP"><span class="nav-number">6.3.</span> <span class="nav-text">ASP 和 PHP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-SQL"><span class="nav-number">7.</span> <span class="nav-text">7. SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL-%E6%98%AF%E7%94%A8%E4%BA%8E%E8%AE%BF%E9%97%AE%E5%92%8C%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%A0%87%E5%87%86%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80%E3%80%82"><span class="nav-number">7.0.0.1.</span> <span class="nav-text">SQL 是用于访问和处理数据库的标准的计算机语言。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-SQL-%E6%9D%A5%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE"><span class="nav-number">7.1.</span> <span class="nav-text">通过 SQL 来管理数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-SQL"><span class="nav-number">7.2.</span> <span class="nav-text">什么是 SQL?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="nav-number">7.3.</span> <span class="nav-text">SQL 数据库表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E6%9F%A5%E8%AF%A2%E7%A8%8B%E5%BA%8F"><span class="nav-number">7.4.</span> <span class="nav-text">SQL 查询程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80-DML"><span class="nav-number">7.5.</span> <span class="nav-text">SQL 数据操作语言 (DML)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80-DDL"><span class="nav-number">7.6.</span> <span class="nav-text">SQL 数据定义语言 (DDL)</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Heroy"
+      src="/images/tx.jpeg">
+  <p class="site-author-name" itemprop="name">Heroy</p>
+  <div class="site-description" itemprop="description">My blog</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hy1231" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hy1231" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:571578056@qq.com" title="E-Mail → mailto:571578056@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heroy</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
